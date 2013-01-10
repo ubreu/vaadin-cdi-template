@@ -1,0 +1,17 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
+
+def vaadinVersion = '7.0.0.beta11'
+
+dependencies{
+	compile project(':backend')
+	compile group:'com.vaadin', name:'vaadin-server', version:vaadinVersion
+	compile group:'com.vaadin', name:'vaadin-client-compiled', version:vaadinVersion
+	compile group:'com.vaadin', name:'vaadin-themes', version:vaadinVersion
+	compile cdiIntegration
+}
+
+eclipse {
+	pathVariables 'GRADLE_USER_HOME': gradle.gradleUserHomeDir, 'EXTERNAL_LIBS': file('../external/lib')
+}

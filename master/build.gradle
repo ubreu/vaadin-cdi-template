@@ -1,0 +1,32 @@
+allprojects {
+	group = 'ch.gleisdrei.vaadin-cdi-template'
+	version = '0.0.1'
+
+	def externalLibs = fileTree(dir: '../external/lib')
+
+	project.ext {
+		cdiIntegration = files(externalLibs.matching { include 'vaadin-cdi*' })
+	}
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	sourceCompatibility = 1.7
+	targetCompatibility = 1.7
+	
+
+	repositories{
+		mavenCentral()
+		mavenRepo name:'EclipseLink', url:'http://download.eclipse.org/rt/eclipselink/maven.repo'
+	}
+
+	eclipse {
+		pathVariables 'GRADLE_USER_HOME': gradle.gradleUserHomeDir, 'EXTERNAL_LIBS': file('../external/lib')
+	}
+}
+
+task wrapper(type:Wrapper) {
+	gradleVersion='1.3'
+}
+
