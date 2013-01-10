@@ -1,5 +1,4 @@
 apply plugin: 'war'
-apply plugin: 'jetty'
 apply plugin: 'eclipse-wtp'
 
 def vaadinVersion = '7.0.0.beta11'
