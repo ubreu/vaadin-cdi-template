@@ -6,6 +6,15 @@ allprojects {
 
 	project.ext {
 		cdiIntegration = files(externalLibs.matching { include 'vaadin-cdi*' })
+		
+		serverRuntimeDependencies = [
+			'javax.enterprise:cdi-api:1.0-SP4',
+			'javax.inject:javax.inject:1',
+			'javax.persistence:persistence-api:1.0.2',
+			'javax.servlet:javax.servlet-api:3.0.1',
+			'javax.transaction:transaction-api:1.1',
+			'org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec:1.0.1.Final'
+		]
 	}
 }
 

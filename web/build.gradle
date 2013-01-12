@@ -9,6 +9,7 @@ dependencies{
 	compile group:'com.vaadin', name:'vaadin-client-compiled', version:vaadinVersion
 	compile group:'com.vaadin', name:'vaadin-themes', version:vaadinVersion
 	compile cdiIntegration
+	providedCompile serverRuntimeDependencies
 }
 
 eclipse {

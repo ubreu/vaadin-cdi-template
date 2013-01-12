@@ -1,5 +1,6 @@
 dependencies{
-	compile group:'hsqldb', name:'hsqldb', version:'1.8.0.10'
-	compile group:'org.eclipse.persistence', name:'eclipselink', version:'2.3.2'
-	compile group:'org.eclipse.persistence', name:'javax.persistence', version:'2.0.3'
+	compile 'hsqldb:hsqldb:1.8.0.10'
+	compile 'org.eclipse.persistence:eclipselink:2.3.2'
+	compile 'org.eclipse.persistence:javax.persistence:2.0.3'
+	compile serverRuntimeDependencies
 }
